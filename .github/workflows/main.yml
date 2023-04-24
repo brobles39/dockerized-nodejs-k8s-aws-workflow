@@ -52,7 +52,6 @@ jobs:
       run: |
         echo "$KUBECONFIG_FILE" | base64 --decode > kubeconfig.yaml
         export KUBECONFIG=kubeconfig.yaml
-        kubectl autoscale deployment nttdata-app --cpu-percent=50 --min=1 --max=10
         envsubst < k8s-deployment.yml | kubectl apply -f -
       env:
         KUBECONFIG_FILE: ${{ secrets.KUBECONFIG_FILE }}
