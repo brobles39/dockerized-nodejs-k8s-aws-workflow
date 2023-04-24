@@ -1,5 +1,6 @@
 {
   "name": "nttdata-private-practice",
+  "Author": "Brian Robles",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",

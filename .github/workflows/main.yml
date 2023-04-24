@@ -48,7 +48,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
 
-    - name: Create an HPA && Deploy the app to Amazon EKS
+    - name: Deploy the app to Amazon EKS
       run: |
         echo "$KUBECONFIG_FILE" | base64 --decode > kubeconfig.yaml
         export KUBECONFIG=kubeconfig.yaml
