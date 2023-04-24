@@ -1,5 +1,5 @@
 module.exports = {
-    testEnvironment: 'node',
-    testMatch: ['**/*.test.js'],
-    moduleFileExtensions: ['js', 'json'],
-  };  
+  testEnvironment: 'node',
+  testMatch: ['**/*.test.js'],
+  moduleFileExtensions: ['js', 'json'],
+};

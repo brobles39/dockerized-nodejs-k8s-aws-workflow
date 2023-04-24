@@ -24,8 +24,11 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-#    - name: Run unit tests
-#      run: npm run test
+    - name: Running unit tests
+      run: npm run test
+    
+    - name: Running static code analysis test
+      run: npm run lint
 
     - name: Build Docker image
       run: docker build -t nttdata .

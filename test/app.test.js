@@ -1,9 +1,9 @@
 const request = require('supertest');
-const app = require('../app');
 const jwt = require('jsonwebtoken');
+const app = require('../app');
 
 const apiKey = '2f5ae96c-b558-4c7b-a590-a501ae1c3f6c';
-const jwtSecret = process.env.JWT_SECRET || 'your-secret-key';
+const jwtSecret = 'NTTDataSK';
 
 let server;
 
@@ -25,10 +25,9 @@ describe('POST /DevOps', () => {
       .set('X-Parse-REST-API-Key', apiKey)
       .set('Authorization', `Bearer ${token}`)
       .send(validPayload);
-
     expect(res.statusCode).toEqual(200);
     expect(res.body).toEqual({
-      message: 'Hello Juan Perez your message will be send',
+      message: 'Hello Juan Perez, your message will be send',
     });
   });
 
@@ -59,9 +58,8 @@ describe('POST /DevOps', () => {
     const res = await request(app)
       .post('/DevOps')
       .set('X-Parse-REST-API-Key', apiKey)
-      .set('Authorization', `Bearer invalid-jwt`)
+      .set('Authorization', 'Bearer invalid-jwt')
       .send(validPayload);
-  
     expect(res.statusCode).toEqual(401);
   });
 });
@@ -73,10 +71,10 @@ describe('GET /', () => {
   });
 });
 
-beforeAll(done => {
-  server = app.listen(done);
+beforeAll(() => {
+  server = global.server;
 });
 
-afterAll(done => {
-  server.close(done);
+afterAll(() => {
+  server.close();
 });
