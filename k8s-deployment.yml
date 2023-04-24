@@ -16,7 +16,7 @@ spec:
       - name: nttdata-app
         image: brobles39/nttdata:latest
         ports:
-        - containerPort: 8000
+        - containerPort: 3000
         resources:
           limits:
             cpu: 500m
@@ -33,5 +33,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8000
+      targetPort: 3000
   type: LoadBalancer
