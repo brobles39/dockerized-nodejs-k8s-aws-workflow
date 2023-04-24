@@ -67,7 +67,7 @@ curl -X POST -H "X-Parse-REST-API-Key: 2f5ae96c-b558-4c7b-a590-a501ae1c3f6c" -H 
 In the following image, one can see the two pods running, along with the LoadBalancer service, deployment and replicaset. The replicaset displays both the desired and current size of the pods.
 <img src="./inform/resourcescreated.png" alt="Alt text" title="Optional title">
 
-## Ci/CD Process
+## CI/CD Process
 
 Github actions was used as a CI/CD tool, basically it installs the project dependencies, logs into my personal dockerhub account, builds the application and uploads it to my dockerhub account.
 
