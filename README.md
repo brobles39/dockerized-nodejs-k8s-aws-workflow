@@ -11,8 +11,9 @@ Finally, the app listens on the specified port (either the environment variable 
 ## JWT
 
 ```bash
-This application uses as secret key:  NTTDataSK
-The JWT is: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQnJpYW4gUm9ibGVzIEJlcm5hbCIsInBvc2l0aW9uIjoiU3IgRGV2T3BzIEVuZ2luZWVyIn0.j7GIu1ljPdLqurUSkSPlZJvJahOt-U3MV1u217fIPog
+This application uses as secret key:  'NTTDataSK';
+The JWT is: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQnJpYW4gUm9ibGVzIEJlcm5hbCIsInBvc2l0aW9uIjoiU3IgRGV2T3BzIEVuZ2luZWVyIn0.j7GIu1ljPdLqurUSkSPlZJvJahOt-U3MV1u217fIPog';
+ApiKey = '2f5ae96c-b558-4c7b-a590-a501ae1c3f6c';
 ```
 
 ## Local testing
@@ -28,7 +29,12 @@ git clone https://github.com/brobles39/nttdata-private-practice.git
 Install dependencies.
 
 ```bash
-npm i
+npm install
+```
+Run the app.
+
+```bash
+npm run start
 ```
 
 Test the app.
@@ -56,6 +62,8 @@ The application is already deployed in EKS using github actions as CI/CD tool, t
 ```bash
 http://a3b7299ce12b045fca33e0a5159db376-181428005.us-east-1.elb.amazonaws.com/devops/
 ```
+
+Test the endpoint using the following command:
 
 ```bash
 curl -X POST -H "X-Parse-REST-API-Key: 2f5ae96c-b558-4c7b-a590-a501ae1c3f6c" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQnJpYW4gUm9ibGVzIEJlcm5hbCIsInBvc2l0aW9uIjoiU3IgRGV2T3BzIEVuZ2luZWVyIn0.j7GIu1ljPdLqurUSkSPlZJvJahOt-U3MV1u217fIPog" -H "Content-Type: application/json" -d "{\"message\": \"This is a test\", \"to\": \"Juan Perez\", \"from\": \"Rita Asturia\", \"timeToLifeSec\": 45}" http://a3b7299ce12b045fca33e0a5159db376-181428005.us-east-1.elb.amazonaws.com/DevOps
