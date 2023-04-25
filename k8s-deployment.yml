@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nttdata-app
-        image: brobles39/nttdata:latest
+        image: brobles39/nttdata:stable
         ports:
         - containerPort: 3000
         resources:

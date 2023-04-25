@@ -41,8 +41,8 @@ jobs:
 
     - name: Push Docker image
       run: |
-        docker tag nttdata ${{ secrets.DOCKER_HUB_USERNAME }}/nttdata:latest
-        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/nttdata:latest
+        docker tag nttdata ${{ secrets.DOCKER_HUB_USERNAME }}/nttdata:stable
+        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/nttdata:stable
     
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
